@@ -26,10 +26,5 @@ jobs:
     - name: Build
       run: npm run build
       
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      if: github.ref == 'refs/heads/main'
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist
-        cname: centerstage.jacobwebb12.github.io
+    - name: Build completed successfully
+      run: echo "Build completed successfully. Deploy to Vercel manually or connect Vercel to this repository for automatic deployment."
