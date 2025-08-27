@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { LogOut } from "lucide-react";
 
 export function NavBar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -23,6 +24,11 @@ export function NavBar() {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("centerstage_authenticated");
+    window.location.reload();
   };
 
   return (
@@ -68,7 +74,7 @@ export function NavBar() {
               </motion.div>
             </motion.div>
 
-            {/* Navigation Links - Desktop Only */}
+            {/* Navigation Links - Center */}
             <motion.div
               className="hidden md:flex items-center space-x-2"
               layout
@@ -127,6 +133,25 @@ export function NavBar() {
                 )}
               >
                 Venue
+              </Button>
+            </motion.div>
+
+            {/* Logout Button - Right */}
+            <motion.div
+              className="hidden md:flex items-center"
+              layout
+            >
+              <Button
+                variant="outline"
+                size={isScrolled ? "sm" : "default"}
+                onClick={handleLogout}
+                className={cn(
+                  "transition-all duration-200 hover:bg-red-50 hover:text-red-600 hover:border-red-200",
+                  isScrolled ? "h-8 px-3 text-sm" : "h-10 px-4"
+                )}
+              >
+                <LogOut className={cn("mr-2", isScrolled ? "w-3 h-3" : "w-4 h-4")} />
+                Logout
               </Button>
             </motion.div>
 
@@ -226,6 +251,18 @@ export function NavBar() {
                   className="justify-start text-left h-12"
                 >
                   Venue
+                </Button>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => {
+                    handleLogout();
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className="justify-start text-left h-12 text-red-600 hover:bg-red-50 hover:text-red-700"
+                >
+                  <LogOut className="w-4 h-4 mr-2" />
+                  Logout
                 </Button>
               </div>
             </div>
