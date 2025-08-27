@@ -87,7 +87,7 @@ export function Footer() {
                   className="flex items-center gap-2 text-foreground-muted hover:text-primary transition-colors"
                 >
                   <Mail className="w-4 h-4" />
-                  <span>info@centerstage.com</span>
+                  <span>david@2waylacrosse.com</span>
                 </a>
                 <a 
                   href="mailto:film@centerstage.com"
