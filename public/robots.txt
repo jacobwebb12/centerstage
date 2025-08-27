@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://centerstage.com/sitemap.xml
+# Sitemap
+Sitemap: https://centerstage.jacobwebb12.vercel.app/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1

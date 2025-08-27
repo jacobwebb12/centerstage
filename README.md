@@ -1,73 +1,104 @@
-# Welcome to your Lovable project
+# Centerstage — Elite Lacrosse Showcase
 
-## Project info
+**Centerstage** is a premier youth lacrosse tournament featuring elite teams from the 2027 and 2028 divisions competing in a one-day championship showcase at Westminster School.
 
-**URL**: https://lovable.dev/projects/dc94ebf7-2b48-44ec-ad29-0eec097e5d25
+## 🏆 Event Details
 
-## How can I edit this code?
+- **Date**: Sunday, November 9, 2025
+- **Location**: Westminster School, Simsbury, CT
+- **Divisions**: 2027 & 2028
+- **Teams**: Four elite programs competing at the highest level
+- **Format**: Single-day championship bracket with pool play seeding
 
-There are several ways of editing your application.
+## 🚀 Features
 
-**Use Lovable**
+- **Professional Game Film**: Powered by Starlight with 4K resolution
+- **Player Tagging**: Advanced analytics and individual player tracking
+- **College Coach Access**: Direct access for recruiters and coaches
+- **Mobile Responsive**: Optimized for all devices with hamburger navigation
+- **Modern Design**: Dark grunge aesthetic with bold yellow accents
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/dc94ebf7-2b48-44ec-ad29-0eec097e5d25) and start prompting.
+## 🛠️ Technology Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Frontend**: React 18 + TypeScript
+- **Styling**: Tailwind CSS + Shadcn UI
+- **Build Tool**: Vite
+- **Deployment**: Vercel
+- **Animations**: Framer Motion
 
-**Use your preferred IDE**
+## 📱 Mobile Experience
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- **Hamburger Menu**: Clean navigation for mobile users
+- **Responsive Design**: Optimized layouts for all screen sizes
+- **Touch-Friendly**: Large touch targets and smooth interactions
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 🎯 Sections
 
-Follow these steps:
+1. **Hero**: Countdown timer and main event information
+2. **Event Overview**: Date, divisions, and venue details
+3. **Teams**: Elite program information with team logos
+4. **Game Film**: Starlight integration and ordering
+5. **Schedule**: Tournament format and match times
+6. **Venue**: Westminster School information and map
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## 🚀 Getting Started
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
 
-# Step 3: Install the necessary dependencies.
-npm i
+### Installation
+```bash
+# Clone the repository
+git clone https://github.com/jacobwebb12/centerstage.git
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Navigate to project directory
+cd centerstage
+
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+### Build
+```bash
+# Build for production
+npm run build
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+# Preview production build
+npm run preview
+```
 
-**Use GitHub Codespaces**
+## 🌐 Deployment
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+The website is automatically deployed to Vercel on every push to the main branch.
 
-## What technologies are used for this project?
+- **Production URL**: [https://centerstage.jacobwebb12.vercel.app](https://centerstage.jacobwebb12.vercel.app)
+- **Repository**: [https://github.com/jacobwebb12/centerstage](https://github.com/jacobwebb12/centerstage)
 
-This project is built with:
+## 📊 SEO & Social Media
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- **Open Graph**: Optimized for Facebook, LinkedIn, and other platforms
+- **Twitter Cards**: Enhanced previews for Twitter sharing
+- **Sitemap**: XML sitemap for search engine indexing
+- **Meta Tags**: Comprehensive SEO optimization
+- **Social Preview**: Uses cstage.png for link previews
 
-## How can I deploy this project?
+## 🎨 Design System
 
-Simply open [Lovable](https://lovable.dev/projects/dc94ebf7-2b48-44ec-ad29-0eec097e5d25) and click on Share -> Publish.
+- **Colors**: Dark charcoal backgrounds with bold yellow (#f2d03b) accents
+- **Typography**: Bebas Neue for headings, Inter for body text
+- **Components**: Consistent UI components with hover effects and animations
+- **Layout**: Responsive grid system with proper spacing
 
-## Can I connect a custom domain to my Lovable project?
+## 📞 Contact
 
-Yes, you can!
+For event information and registration:
+- **Email**: info@centerstage.com
+- **Game Film**: film@centerstage.com
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 📄 License
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+This project is proprietary and confidential. All rights reserved.
