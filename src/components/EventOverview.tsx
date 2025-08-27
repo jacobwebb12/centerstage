@@ -24,9 +24,9 @@ export function EventOverview() {
       <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         {/* Event Details */}
         <Reveal delay={0.2}>
-          <div className="space-y-6">
+          <div className="space-y-6 text-center lg:text-left">
             <div className="space-y-6">
-              <div className="flex items-center gap-4">
+              <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4">
                 <Calendar className="w-7 h-7 text-primary" />
                 <div>
                   <span className="font-display text-foreground text-lg block">Date:</span>
@@ -34,11 +34,11 @@ export function EventOverview() {
                 </div>
               </div>
               
-              <div className="flex items-center gap-4">
+              <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4">
                 <Trophy className="w-7 h-7 text-primary" />
                 <div>
                   <span className="font-display text-foreground text-lg block">Divisions:</span>
-                  <div className="flex gap-3 mt-2">
+                  <div className="flex gap-3 mt-2 justify-center lg:justify-start">
                     {EVENT_DATA.divisions.map((division) => (
                       <Badge key={division} variant="accent" className="text-sm px-4 py-2">
                         {division}
@@ -48,7 +48,7 @@ export function EventOverview() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-4">
+              <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4">
                 <MapPin className="w-7 h-7 text-primary" />
                 <div>
                   <span className="font-display text-foreground text-lg block">Venue:</span>

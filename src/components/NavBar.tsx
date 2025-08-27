@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 
 export function NavBar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -67,9 +68,9 @@ export function NavBar() {
               </motion.div>
             </motion.div>
 
-            {/* Navigation Links - Right */}
+            {/* Navigation Links - Desktop Only */}
             <motion.div
-              className="flex items-center space-x-2"
+              className="hidden md:flex items-center space-x-2"
               layout
             >
               <Button
@@ -128,9 +129,109 @@ export function NavBar() {
                 Venue
               </Button>
             </motion.div>
+
+            {/* Mobile Menu Button */}
+            <motion.div
+              className="md:hidden flex items-center"
+              layout
+            >
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="p-2"
+              >
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d={isMobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
+                  />
+                </svg>
+              </Button>
+            </motion.div>
           </div>
         </motion.div>
       </motion.nav>
+
+      {/* Mobile Menu Dropdown */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            className="md:hidden fixed top-20 left-0 right-0 z-40 bg-card/95 backdrop-blur-md border-b border-primary/20"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.2 }}
+          >
+            <div className="container mx-auto px-4 py-4">
+              <div className="flex flex-col space-y-2">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => {
+                    scrollToSection("overview");
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className="justify-start text-left h-12"
+                >
+                  Overview
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => {
+                    scrollToSection("schedule");
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className="justify-start text-left h-12"
+                >
+                  Schedule
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => {
+                    scrollToSection("teams");
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className="justify-start text-left h-12"
+                >
+                  Teams
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => {
+                    scrollToSection("film");
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className="justify-start text-left h-12"
+                >
+                  Game Film
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => {
+                    scrollToSection("venue");
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className="justify-start text-left h-12"
+                >
+                  Venue
+                </Button>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </AnimatePresence>
   );
 }
