@@ -93,7 +93,7 @@ export function Footer() {
                   href="mailto:film@centerstage.com"
                   className="text-foreground-muted hover:text-primary transition-colors block"
                 >
-                  Game Film Inquiries
+                  Contact Us
                 </a>
               </div>
             </div>

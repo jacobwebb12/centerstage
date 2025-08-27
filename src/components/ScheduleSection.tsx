@@ -79,13 +79,13 @@ export function ScheduleSection() {
             <div className="bg-card/50 border border-primary/10 rounded-lg p-6">
               <h4 className="font-display font-bold text-foreground mb-3">Format</h4>
               <p className="text-foreground-muted text-sm">
-                Single-elimination bracket tournament with pool play seeding
+                Best record is crowned champion.
               </p>
             </div>
             <div className="bg-card/50 border border-primary/10 rounded-lg p-6">
               <h4 className="font-display font-bold text-foreground mb-3">Duration</h4>
               <p className="text-foreground-muted text-sm">
-                Games begin at 9:00 AM, championship matches at 6:00 PM
+                Games begin at 8:00 AM
               </p>
             </div>
           </div>

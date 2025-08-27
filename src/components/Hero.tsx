@@ -105,7 +105,7 @@ export function Hero() {
               size="hero"
               onClick={() => window.location.href = "mailto:info@centerstage.com?subject=Registration Interest"}
             >
-              Register Interest
+              College Coaches Form
             </Button>
             <Button 
               variant="outline" 
