@@ -47,11 +47,14 @@ export function Hero() {
             {EVENT_DATA.subtitle}
           </Badge>
 
-          {/* Main Title */}
-          <h1 className="font-display text-6xl md:text-8xl lg:text-9xl font-bold mb-6 tracking-normal">
-            <span className="text-foreground">CENTER</span>
-            <span className="text-primary">STAGE</span>
-          </h1>
+          {/* Main Logo */}
+          <div className="mb-6">
+            <img
+              src="/cs_logo.png"
+              alt="Centerstage Logo"
+              className="h-24 md:h-32 lg:h-40 mx-auto"
+            />
+          </div>
 
           {/* Event Details */}
           <div className="flex flex-wrap justify-center gap-4 mb-8">
