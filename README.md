@@ -84,7 +84,7 @@ The website is automatically deployed to Vercel on every push to the main branch
 - **Twitter Cards**: Enhanced previews for Twitter sharing
 - **Sitemap**: XML sitemap for search engine indexing
 - **Meta Tags**: Comprehensive SEO optimization
-- **Social Preview**: Uses cstage.png for link previews
+- **Social Preview**: Uses cstage1.png for link previews
 
 ## 🎨 Design System
 

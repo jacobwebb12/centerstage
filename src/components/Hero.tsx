@@ -22,7 +22,7 @@ export function Hero() {
         <div 
           className="w-full h-full bg-cover bg-center bg-no-repeat"
           style={{ 
-            backgroundImage: "url('/cstage.png')",
+            backgroundImage: "url('/cstage1.png')",
             backgroundPosition: "center 40%"
           }}
         />

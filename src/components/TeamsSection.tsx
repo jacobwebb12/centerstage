@@ -24,7 +24,7 @@ export function TeamsSection() {
     "2Way Black": "/2w.jpg",
     "Laxachusetts Black": "/lax.jpg", 
     "Shore 2 Shore": "/s2s.jpg",
-    "Colorado Kings": "/kings.jpg"
+    "Red Hots": "/Red-Hots.png"
   };
 
   return (
@@ -82,11 +82,6 @@ export function TeamsSection() {
               <Badge variant="accent" className="mb-4">
                 Division {team.division}
               </Badge>
-              
-              {/* Placeholder for team stats or description */}
-              <p className="text-sm text-foreground-muted">
-                Elite program competing at the highest level
-              </p>
             </div>
           ))}
         </div>

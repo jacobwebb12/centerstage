@@ -13,8 +13,7 @@ export const EVENT_DATA = {
     { name: "Laxachusetts Black", division: "2028" },
     { name: "Shore 2 Shore", division: "2027" },
     { name: "Shore 2 Shore", division: "2028" },
-    { name: "Colorado Kings", division: "2027" },
-    { name: "Colorado Kings", division: "2028" }
+    { name: "Red Hots", division: "2028" }
   ],
   description: "Two divisions. Four elite programs. One stage. Centerstage brings the 2027 and 2028 divisions together for a fast-paced, single-day championship bracket at Westminster School."
 };
