@@ -58,16 +58,15 @@ export function NavBar() {
               className="flex items-center"
               layout
             >
-              <motion.div
+              <motion.img
+                src="/cs_logo.png"
+                alt="Centerstage Logo"
                 className={cn(
-                  "font-display font-bold transition-all duration-300",
-                  isScrolled ? "text-xl" : "text-2xl"
+                  "transition-all duration-300",
+                  isScrolled ? "h-8" : "h-10"
                 )}
                 layout
-              >
-                <span className="text-foreground">CENTER</span>
-                <span className="text-primary">STAGE</span>
-              </motion.div>
+              />
             </motion.div>
 
             {/* Navigation Links - Center */}
