@@ -103,7 +103,7 @@ export function Hero() {
             <Button 
               variant="hero" 
               size="hero"
-              onClick={() => window.location.href = "mailto:info@centerstage.com?subject=Registration Interest"}
+              onClick={() => window.open('https://4qkyqsn19w9.typeform.com/to/lRj9KeEv', '_blank')}
             >
               College Coaches Form
             </Button>
