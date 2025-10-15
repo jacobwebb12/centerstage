@@ -101,20 +101,18 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.6 }}
           >
             <Button 
-              variant="outline" 
-              size="lg"
-              className="bg-green-600 hover:bg-green-700 text-white border-green-600 hover:border-green-700"
+              variant="hero" 
+              size="hero"
               onClick={() => window.open('https://4qkyqsn19w9.typeform.com/to/lRj9KeEv', '_blank')}
             >
-              <span className="font-display">College Coaches Form</span>
+              College Coaches Form
             </Button>
             <Button 
-              variant="outline" 
-              size="lg"
-              className="bg-green-600 hover:bg-green-700 text-white border-green-600 hover:border-green-700"
+              variant="hero" 
+              size="hero"
               onClick={() => window.open('https://starlighttv.net/events/5', '_blank')}
             >
-              <span className="font-display">Order Game Film</span>
+              Order Game Film
             </Button>
           </motion.div>
         </motion.div>
