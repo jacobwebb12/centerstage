@@ -108,8 +108,9 @@ export function Hero() {
               College Coaches Form
             </Button>
             <Button 
-              variant="hero" 
+              variant="outline" 
               size="hero"
+              className="bg-green-600 hover:bg-green-700 text-white border-green-600 hover:border-green-700"
               onClick={() => window.open('https://starlighttv.net/events/5', '_blank')}
             >
               Order Game Film
