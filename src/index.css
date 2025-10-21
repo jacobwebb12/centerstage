@@ -20,9 +20,9 @@ Dark grunge aesthetic with bold yellow accents
     --popover: 216 8% 14%;
     --popover-foreground: 0 0% 95%;
 
-    --primary: 48 95% 60%;                 /* Bold yellow #f2d03b */
-    --primary-foreground: 216 6% 12%;      /* Dark text on yellow */
-    --primary-glow: 48 95% 70%;            /* Lighter yellow for effects */
+    --primary: 120 100% 50%;               /* Neon green #39ff14 */
+    --primary-foreground: 216 6% 12%;      /* Dark text on green */
+    --primary-glow: 120 100% 60%;          /* Lighter green for effects */
 
     --secondary: 216 6% 18%;               /* Secondary dark */
     --secondary-foreground: 0 0% 95%;
@@ -30,7 +30,7 @@ Dark grunge aesthetic with bold yellow accents
     --muted: 216 6% 16%;                   /* Muted background */
     --muted-foreground: 0 0% 65%;
 
-    --accent: 48 95% 60%;                  /* Yellow accent */
+    --accent: 120 100% 50%;                /* Neon green accent */
     --accent-foreground: 216 6% 12%;
 
     --destructive: 0 84% 60%;
@@ -38,7 +38,7 @@ Dark grunge aesthetic with bold yellow accents
 
     --border: 216 6% 20%;                  /* Dark borders */
     --input: 216 6% 18%;
-    --ring: 48 95% 60%;                    /* Yellow focus ring */
+    --ring: 120 100% 50%;                  /* Neon green focus ring */
 
     /* Design System Extensions */
     --grunge-overlay: 216 6% 8%;           /* Darker overlay */

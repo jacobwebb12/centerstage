@@ -59,7 +59,7 @@ export function NavBar() {
               layout
             >
               <motion.img
-                src="/cs_logo.png"
+                src="/CS_LOGO_COND.png"
                 alt="Centerstage Logo"
                 className={cn(
                   "transition-all duration-300",

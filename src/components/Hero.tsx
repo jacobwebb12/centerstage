@@ -50,7 +50,7 @@ export function Hero() {
           {/* Main Logo */}
           <div className="mb-6">
             <img
-              src="/cs_logo.png"
+              src="/CS LOGO.png"
               alt="Centerstage Logo"
               className="h-24 md:h-32 lg:h-40 mx-auto"
             />

@@ -8,7 +8,7 @@ import { Calendar, Users, MapPin, Trophy } from "lucide-react";
 
 const stats = [
   { icon: Trophy, value: "2", label: "Divisions", description: "2027 & 2028" },
-  { icon: Users, value: "4", label: "Elite Teams", description: "Championship Level" },
+  { icon: Users, value: "3", label: "Elite Teams", description: "Championship Level" },
   { icon: Calendar, value: "1", label: "Day Event", description: "Fast-Paced Action" },
 ];
 

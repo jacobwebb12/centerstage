@@ -83,14 +83,14 @@ export function Footer() {
                               <h4 className="font-display text-foreground mb-4">Contact</h4>
               <div className="space-y-2 text-sm">
                 <a 
-                  href="mailto:info@centerstage.com"
+                  href="mailto:david@2waylacrosse.com"
                   className="flex items-center gap-2 text-foreground-muted hover:text-primary transition-colors"
                 >
                   <Mail className="w-4 h-4" />
                   <span>david@2waylacrosse.com</span>
                 </a>
                 <a 
-                  href="mailto:film@centerstage.com"
+                  href="mailto:david@2waylacrosse.com"
                   className="text-foreground-muted hover:text-primary transition-colors block"
                 >
                   Contact Us

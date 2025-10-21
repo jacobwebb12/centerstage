@@ -8,12 +8,12 @@ import { Clock, Calendar } from "lucide-react";
 export function ScheduleSection() {
   // Game schedule data
   const gameSchedule = [
-    { time: "9:00AM", home: "2Way Black", away: "LXC Black", division: "28" },
-    { time: "10:00AM", home: "2Way Black", away: "S2S Grizzlies", division: "27" },
-    { time: "11:00AM", home: "LXC Black", away: "Red Hots", division: "28" },
-    { time: "12:00PM", home: "2Way Black", away: "LXC Black", division: "27" },
-    { time: "1:00PM", home: "2Way Black", away: "LXC Black", division: "28" },
-    { time: "2:00PM", home: "LXC Black", away: "S2S Grizzlies", division: "27" }
+    { time: "9:00AM", field: "Stadium", home: "2Way Black", away: "LXC Black", division: "28" },
+    { time: "10:00AM", field: "Stadium", home: "2Way Black", away: "S2S Grizzlies", division: "27" },
+    { time: "11:00AM", field: "Stadium", home: "LXC Black", away: "Red Hots", division: "28" },
+    { time: "12:00PM", field: "Stadium", home: "2Way Black", away: "LXC Black", division: "27" },
+    { time: "1:00PM", field: "Stadium", home: "2Way Black", away: "LXC Black", division: "28" },
+    { time: "2:00PM", field: "Stadium", home: "LXC Black", away: "S2S Grizzlies", division: "27" }
   ];
 
   return (
@@ -41,6 +41,7 @@ export function ScheduleSection() {
                 <thead>
                   <tr className="border-b border-primary/10 bg-muted/50">
                     <th className="text-left p-4 font-display text-foreground">Time</th>
+                    <th className="text-left p-4 font-display text-foreground">Field</th>
                     <th className="text-left p-4 font-display text-foreground">Home Team</th>
                     <th className="text-left p-4 font-display text-foreground">Away Team</th>
                     <th className="text-left p-4 font-display text-foreground">Division</th>
@@ -50,6 +51,7 @@ export function ScheduleSection() {
                   {gameSchedule.map((game, index) => (
                     <tr key={index} className="border-b border-primary/5 hover:bg-muted/30 transition-colors">
                       <td className="p-4 font-display font-bold text-foreground">{game.time}</td>
+                      <td className="p-4 text-foreground-muted">{game.field}</td>
                       <td className="p-4 text-foreground">{game.home}</td>
                       <td className="p-4 text-foreground">{game.away}</td>
                       <td className="p-4">
