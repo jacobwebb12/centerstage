@@ -12,7 +12,7 @@ export function ScheduleSection() {
     { time: "10:00AM", field: "Stadium", home: "2Way Black", away: "S2S Grizzlies", division: "27" },
     { time: "11:00AM", field: "Stadium", home: "LXC Black", away: "Red Hots", division: "28" },
     { time: "12:00PM", field: "Stadium", home: "2Way Black", away: "LXC Black", division: "27" },
-    { time: "1:00PM", field: "Stadium", home: "2Way Black", away: "LXC Black", division: "28" },
+    { time: "1:00PM", field: "Stadium", home: "2Way Black", away: "Red Hots", division: "28" },
     { time: "2:00PM", field: "Stadium", home: "LXC Black", away: "S2S Grizzlies", division: "27" }
   ];
 
@@ -32,7 +32,7 @@ export function ScheduleSection() {
                 Tournament Schedule
               </h3>
               <p className="text-foreground-muted text-sm mt-2">
-                Games start at 9:00 AM with 55-minute intervals
+                Games start at 9:00 AM with 1 Hour intervals
               </p>
             </div>
             
@@ -83,7 +83,7 @@ export function ScheduleSection() {
             <div className="bg-card/50 border border-primary/10 rounded-lg p-6">
               <h4 className="font-display font-bold text-foreground mb-3">Game Duration</h4>
               <p className="text-foreground-muted text-sm">
-                55-minute intervals between games
+                1 Hour intervals between games
               </p>
             </div>
           </div>
