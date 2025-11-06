@@ -113,9 +113,9 @@ export function Hero() {
             <Button 
               variant="hero" 
               size="hero"
-              onClick={() => window.open('https://starlighttv.net/events/5', '_blank')}
+              onClick={() => window.open('https://4qkyqsn19w9.typeform.com/to/vFG6Dv5s', '_blank')}
             >
-              Order Game Film
+              Complete Player Waiver
             </Button>
           </motion.div>
         </motion.div>
