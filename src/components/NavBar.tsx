@@ -3,11 +3,13 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
 
 export function NavBar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isFieldMapOpen, setIsFieldMapOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -129,6 +131,30 @@ export function NavBar() {
               >
                 Venue
               </Button>
+              <Dialog open={isFieldMapOpen} onOpenChange={setIsFieldMapOpen}>
+                <DialogTrigger asChild>
+                  <Button
+                    variant="ghost"
+                    size={isScrolled ? "sm" : "default"}
+                    className={cn(
+                      "transition-all duration-200 hover:text-primary",
+                      isScrolled ? "h-8 px-3 text-sm" : "h-10 px-4"
+                    )}
+                  >
+                    Field Map
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="max-w-5xl max-h-[90vh] overflow-auto p-0">
+                  <div className="w-full h-[85vh]">
+                    <embed
+                      src="/CENTERSTAGE Field Map.pdf#toolbar=1"
+                      type="application/pdf"
+                      className="w-full h-full"
+                      title="Field Map"
+                    />
+                  </div>
+                </DialogContent>
+              </Dialog>
             </motion.div>
 
             {/* Right-side controls intentionally empty */}
@@ -231,6 +257,28 @@ export function NavBar() {
                 >
                   Venue
                 </Button>
+                <Dialog open={isFieldMapOpen} onOpenChange={setIsFieldMapOpen}>
+                  <DialogTrigger asChild>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="justify-start text-left h-12"
+                    >
+                      Field Map
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-5xl max-h-[90vh] overflow-auto p-0">
+                    <div className="w-full h-[85vh]">
+                      <embed
+                        src="/CENTERSTAGE Field Map.pdf#toolbar=1"
+                        type="application/pdf"
+                        className="w-full h-full"
+                        title="Field Map"
+                      />
+                    </div>
+                  </DialogContent>
+                </Dialog>
                 {/* No mobile logout; site is public */}
               </div>
             </div>
