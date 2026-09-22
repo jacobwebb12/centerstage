@@ -60,11 +60,11 @@ export function Hero() {
           <div className="flex flex-wrap justify-center gap-4 mb-8">
             <Badge variant="date">
               <Calendar className="w-4 h-4 mr-2" />
-              Sunday, November 9, 2025
+              {EVENT_DATA.displayDate}
             </Badge>
             <Badge variant="date">
               <MapPin className="w-4 h-4 mr-2" />
-              Westminster School
+              {EVENT_DATA.location}
             </Badge>
           </div>
 

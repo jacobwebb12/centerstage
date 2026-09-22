@@ -4,7 +4,7 @@ import { Section } from "@/components/Section";
 import { Reveal } from "@/components/Reveal";
 import { MapEmbed } from "@/components/MapEmbed";
 import { EVENT_DATA } from "@/lib/constants";
-import { MapPin, Car, Clock, Info } from "lucide-react";
+import { MapPin, Car } from "lucide-react";
 
 const venueInfo = [
   {
@@ -15,23 +15,17 @@ const venueInfo = [
   {
     icon: Car,
     title: "Parking",
-    details: "Visitor lots adjacent to athletic facilities"
-  },
-  
-  {
-    icon: Info,
-    title: "Facilities",
-    details: "Concessions, restrooms, and seating available"
+    details: "Arrive early to allow time for parking and check-in"
   }
 ];
 
 export function VenueSection() {
   return (
-    <Section 
+    <Section
       id="venue"
       kicker="Event Location"
-      title="Westminster School"
-      description="Premier athletic facilities in Simsbury, Connecticut"
+      title={EVENT_DATA.location}
+      description="Portland, Connecticut"
     >
       <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
         {/* Map */}
@@ -62,23 +56,9 @@ export function VenueSection() {
               ))}
             </div>
 
-            {/* Travel Notes */}
-            <div className="bg-card border border-primary/10 rounded-xl p-6">
-              <h3 className="font-display font-bold text-foreground mb-4">
-                Travel & Parking Notes
-              </h3>
-              <ul className="space-y-2 text-foreground-muted text-sm">
-                <li>• Parking fills up quickly - arrive early</li>
-                <li>• Main entrance located on Hopmeadow Street</li>
-                <li>• Additional overflow parking available on campus</li>
-                <li>• Drop-off zone available for players near athletic center</li>
-                <li>• Campus is easily accessible from I-84 and Route 185</li>
-              </ul>
-            </div>
-
             {/* Directions Button */}
             <a
-              href="https://maps.google.com/?q=Westminster+School+Simsbury+CT"
+              href={`https://maps.google.com/?q=${encodeURIComponent(`${EVENT_DATA.location}, ${EVENT_DATA.address}`)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-display hover:bg-primary/90 transition-colors"

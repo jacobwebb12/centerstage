@@ -4,9 +4,9 @@ import { NavBar } from "@/components/NavBar";
 import { Hero } from "@/components/Hero";
 import { EventOverview } from "@/components/EventOverview";
 import { TeamsSection } from "@/components/TeamsSection";
-import { ScheduleSection } from "@/components/ScheduleSection";
 import { VenueSection } from "@/components/VenueSection";
 import { FilmSection } from "@/components/FilmSection";
+import { EVENT_DATA } from "@/lib/constants";
 
 import { Footer } from "@/components/Footer";
 
@@ -22,26 +22,25 @@ const Index = () => {
             "@context": "https://schema.org",
             "@type": "SportsEvent",
             "name": "Centerstage — Team Showcase",
-            "startDate": "2025-11-09T09:00:00-05:00",
-            "endDate": "2025-11-09T20:00:00-05:00",
+            "startDate": EVENT_DATA.date,
+            "endDate": EVENT_DATA.endDate,
             "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
             "eventStatus": "https://schema.org/EventScheduled",
             "location": {
               "@type": "Place",
-              "name": "Westminster School",
-              "address": "995 Hopmeadow St, Simsbury, CT 06070"
+              "name": EVENT_DATA.location,
+              "address": EVENT_DATA.address
             },
-            "description": "Four elite teams from the 2027 & 2028 divisions compete in a one-day championship showcase.",
-            "performer": ["2Way Black","Laxachusetts Black","Shore 2 Shore","Colorado Kings"]
+            "description": "Elite programs from the 2028, 2029 & 2030 divisions compete in a one-day showcase.",
+            "performer": [...new Set(EVENT_DATA.teams.filter((team) => team.logo).map((team) => team.name))]
           })
         }}
       />
-      
+
       <Hero />
       <EventOverview />
       <TeamsSection />
       <FilmSection />
-      <ScheduleSection />
       <VenueSection />
       <Footer />
     </div>

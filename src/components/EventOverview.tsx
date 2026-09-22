@@ -6,9 +6,14 @@ import { Badge } from "@/components/ui/badge";
 import { EVENT_DATA } from "@/lib/constants";
 import { Calendar, Users, MapPin, Trophy } from "lucide-react";
 
+const divisions = EVENT_DATA.divisions;
+const programCount = new Set(
+  EVENT_DATA.teams.filter((team) => team.logo).map((team) => team.name)
+).size;
+
 const stats = [
-  { icon: Trophy, value: "2", label: "Divisions", description: "2027 & 2028" },
-  { icon: Users, value: "3", label: "Elite Teams", description: "Championship Level" },
+  { icon: Trophy, value: String(divisions.length), label: "Divisions", description: `${divisions[0]}–${divisions[divisions.length - 1]}` },
+  { icon: Users, value: String(programCount), label: "Elite Programs", description: "Championship Level" },
   { icon: Calendar, value: "1", label: "Day Event", description: "Fast-Paced Action" },
 ];
 
@@ -30,7 +35,7 @@ export function EventOverview() {
                 <Calendar className="w-7 h-7 text-primary" />
                 <div>
                   <span className="font-display text-foreground text-lg block">Date:</span>
-                  <span className="text-foreground-muted text-lg">Sunday, Nov 9, 2025</span>
+                  <span className="text-foreground-muted text-lg">{EVENT_DATA.displayDate}</span>
                 </div>
               </div>
               
@@ -52,7 +57,8 @@ export function EventOverview() {
                 <MapPin className="w-7 h-7 text-primary" />
                 <div>
                   <span className="font-display text-foreground text-lg block">Venue:</span>
-                  <span className="text-foreground-muted text-lg">{EVENT_DATA.location}</span>
+                  <span className="text-foreground-muted text-lg block">{EVENT_DATA.location}</span>
+                  <span className="text-foreground-muted text-sm">{EVENT_DATA.address}</span>
                 </div>
               </div>
             </div>

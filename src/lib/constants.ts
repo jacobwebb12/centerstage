@@ -1,20 +1,38 @@
+export interface Team {
+  name: string;
+  division: string;
+  logo?: string;
+}
+
 export const EVENT_DATA = {
   name: "Centerstage",
   subtitle: "Team Showcase",
-  date: "2025-11-09T09:00:00-05:00",
-  endDate: "2025-11-09T20:00:00-05:00",
-  location: "Westminster School",
-  address: "995 Hopmeadow St, Simsbury, CT 06070",
-  divisions: ["2027", "2028"],
+  date: "2026-11-01T09:00:00-05:00",
+  endDate: "2026-11-01T20:00:00-05:00",
+  displayDate: "Sunday, November 1, 2026",
+  location: "Oakwood Soccer Park",
+  address: "521 Glastonbury Turnpike, Portland, CT 06480",
+  divisions: ["2028", "2029", "2030"],
   teams: [
-    { name: "2Way Black", division: "2027" },
-    { name: "2Way Black", division: "2028" },
-    { name: "Laxachusetts Black", division: "2027" },
-    { name: "Laxachusetts Black", division: "2028" },
-    { name: "Shore 2 Shore", division: "2027" },
-    { name: "Red Hots", division: "2028" }
-  ],
-  description: "Two divisions. Four elite programs. One stage. Centerstage brings the 2027 and 2028 divisions together for a fast-paced, single-day championship bracket at Westminster School."
+    { name: "2Way", division: "2028", logo: "/team_logos/2way.svg" },
+    { name: "Laxachusetts Black", division: "2028", logo: "/team_logos/laxachussets.svg" },
+    { name: "Eclipse", division: "2028", logo: "/team_logos/eclipse.png" },
+    { name: "Red Hots", division: "2028", logo: "/team_logos/redhots.svg" },
+    { name: "Sweetlax Upstate", division: "2028", logo: "/team_logos/sweetlaxup.svg" },
+
+    { name: "2Way", division: "2029", logo: "/team_logos/2way.svg" },
+    { name: "Laxachusetts Black", division: "2029", logo: "/team_logos/laxachussets.svg" },
+    { name: "Red Hots", division: "2029", logo: "/team_logos/redhots.svg" },
+    { name: "Sweetlax Upstate", division: "2029", logo: "/team_logos/sweetlaxup.svg" },
+    { name: "Beast Canada", division: "2029", logo: "/team_logos/beast%20canada.svg" },
+    { name: "TBD", division: "2029" },
+
+    { name: "2Way", division: "2030", logo: "/team_logos/2way.svg" },
+    { name: "Sweetlax Upstate", division: "2030", logo: "/team_logos/sweetlaxup.svg" },
+    { name: "Red Hots", division: "2030", logo: "/team_logos/redhots.svg" },
+    { name: "TBD", division: "2030" }
+  ] as Team[],
+  description: "Three divisions. Six elite programs. One stage. Centerstage brings the 2028, 2029 and 2030 divisions together for a fast-paced, single-day showcase at Oakwood Soccer Park."
 };
 
 export const FAQ_DATA = [

@@ -3,91 +3,102 @@
 import { useState } from "react";
 import { Section } from "@/components/Section";
 import { Reveal } from "@/components/Reveal";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { EVENT_DATA } from "@/lib/constants";
+import { EVENT_DATA, type Team } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 export function TeamsSection() {
-  const [activeTab, setActiveTab] = useState("2027");
-  
+  const [activeTab, setActiveTab] = useState(EVENT_DATA.divisions[0]);
+
   const teamsByDivision = EVENT_DATA.teams.reduce((acc, team) => {
     if (!acc[team.division]) {
       acc[team.division] = [];
     }
     acc[team.division].push(team);
     return acc;
-  }, {} as Record<string, typeof EVENT_DATA.teams>);
-
-  // Team logo mapping
-  const teamLogos: Record<string, string> = {
-    "2Way Black": "/2w.jpg",
-    "Laxachusetts Black": "/lax.jpg", 
-    "Shore 2 Shore": "/s2s.jpg",
-    "Red Hots": "/Red-Hots.png"
-  };
+  }, {} as Record<string, Team[]>);
 
   return (
-    <Section 
+    <Section
       id="teams"
       kicker="Elite Competition"
       title="Divisions & Teams"
-      description="Three championship-caliber programs competing across two divisions"
+      description="Elite programs competing across three divisions"
     >
       {/* Division Tabs */}
       <Reveal delay={0.2}>
-        <div className="flex justify-center mb-12">
-          <div className="bg-card border border-primary/20 rounded-xl p-1 inline-flex">
-            {EVENT_DATA.divisions.map((division) => (
-              <Button
+        <div
+          role="tablist"
+          aria-label="Divisions"
+          className="grid border border-border mb-8 lg:mb-12"
+          style={{ gridTemplateColumns: `repeat(${EVENT_DATA.divisions.length}, minmax(0, 1fr))` }}
+        >
+          {EVENT_DATA.divisions.map((division) => {
+            const isActive = activeTab === division;
+            const teamCount = teamsByDivision[division]?.length ?? 0;
+
+            return (
+              <button
                 key={division}
-                variant={activeTab === division ? "default" : "ghost"}
-                size="sm"
+                role="tab"
+                aria-selected={isActive}
                 onClick={() => setActiveTab(division)}
                 className={cn(
-                  "px-6 py-2 font-display font-bold text-lg transition-all duration-200",
-                  activeTab === division && "shadow-glow"
+                  "relative text-left px-4 py-4 sm:px-6 sm:py-5 border-r border-border last:border-r-0 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring",
+                  isActive ? "bg-background" : "bg-card hover:bg-secondary"
                 )}
               >
-                {division}
-              </Button>
-            ))}
-          </div>
+                <span
+                  className={cn(
+                    "block font-display text-4xl sm:text-5xl lg:text-6xl leading-none",
+                    isActive ? "text-primary" : "text-foreground"
+                  )}
+                >
+                  {division}
+                </span>
+                <span className="block mt-2 text-[10px] sm:text-xs font-semibold tracking-[0.2em] uppercase text-foreground-muted">
+                  {teamCount} Teams
+                </span>
+                {isActive && <span className="absolute inset-x-0 bottom-0 h-1 bg-primary" />}
+              </button>
+            );
+          })}
         </div>
       </Reveal>
 
       {/* Teams Grid */}
       <Reveal delay={0.4}>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {teamsByDivision[activeTab]?.map((team, index) => (
+        <div role="tabpanel" className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 lg:gap-6">
+          {teamsByDivision[activeTab]?.map((team) => (
             <div
               key={team.name}
-              className="group bg-card border border-primary/10 rounded-xl p-8 text-center hover:border-primary/30 hover:shadow-glow transition-all duration-300 hover:-translate-y-1"
+              className="flex flex-col bg-card border border-border overflow-hidden"
             >
               {/* Team Logo */}
-              <div className="w-20 h-20 rounded-full overflow-hidden mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <img
-                  src={teamLogos[team.name]}
-                  alt={`${team.name} logo`}
-                  className="w-full h-full object-cover"
-                />
+              <div className="relative aspect-[4/3] bg-white">
+                {team.logo ? (
+                  <img
+                    src={team.logo}
+                    alt={`${team.name} logo`}
+                    loading="lazy"
+                    className="absolute inset-0 w-full h-full object-contain p-2"
+                  />
+                ) : (
+                  <span className="absolute inset-0 flex items-center justify-center font-display text-5xl text-neutral-300">
+                    TBD
+                  </span>
+                )}
               </div>
-              
+
               {/* Team Name */}
-              <h3 className="font-display text-2xl font-bold text-foreground mb-3">
-                {team.name}
-              </h3>
-              
-              {/* Division Badge */}
-              <Badge variant="accent" className="mb-4">
-                Division {team.division}
-              </Badge>
+              <div className="flex-1 border-t border-border px-4 py-3 sm:px-5 sm:py-4">
+                <h3 className="font-display text-lg sm:text-xl uppercase tracking-wide leading-tight text-foreground">
+                  {team.name}
+                </h3>
+              </div>
             </div>
           ))}
         </div>
       </Reveal>
-
-
     </Section>
   );
 }

@@ -3,13 +3,18 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
+
+const navItems = [
+  { id: "overview", label: "Overview" },
+  { id: "teams", label: "Teams" },
+  { id: "film", label: "Game Film" },
+  { id: "venue", label: "Venue" },
+];
 
 export function NavBar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isFieldMapOpen, setIsFieldMapOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,10 +37,11 @@ export function NavBar() {
   return (
     <AnimatePresence>
       <motion.nav
+        key="navbar"
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-out",
-          isScrolled 
-            ? "top-4 px-4" 
+          isScrolled
+            ? "top-4 px-4"
             : "top-0"
         )}
         initial={{ y: -100, opacity: 0 }}
@@ -46,7 +52,7 @@ export function NavBar() {
           className={cn(
             "mx-auto max-w-6xl transition-all duration-300 ease-out",
             isScrolled
-              ? "bg-card/80 backdrop-blur-md border border-primary/20 rounded-full shadow-lg shadow-primary/10"
+              ? "bg-card/80 backdrop-blur-md border border-white/10 rounded-full shadow-lg shadow-black/20"
               : "bg-transparent"
           )}
           layout
@@ -76,85 +82,20 @@ export function NavBar() {
               className="hidden md:flex items-center space-x-2"
               layout
             >
-              <Button
-                variant="ghost"
-                size={isScrolled ? "sm" : "default"}
-                onClick={() => scrollToSection("overview")}
-                className={cn(
-                  "transition-all duration-200 hover:text-primary",
-                  isScrolled ? "h-8 px-3 text-sm" : "h-10 px-4"
-                )}
-              >
-                Overview
-              </Button>
-              <Button
-                variant="ghost"
-                size={isScrolled ? "sm" : "default"}
-                onClick={() => scrollToSection("schedule")}
-                className={cn(
-                  "transition-all duration-200 hover:text-primary",
-                  isScrolled ? "h-8 px-3 text-sm" : "h-10 px-4"
-                )}
-              >
-                Schedule
-              </Button>
-              <Button
-                variant="ghost"
-                size={isScrolled ? "sm" : "default"}
-                onClick={() => scrollToSection("teams")}
-                className={cn(
-                  "transition-all duration-200 hover:text-primary",
-                  isScrolled ? "h-8 px-3 text-sm" : "h-10 px-4"
-                )}
-              >
-                Teams
-              </Button>
-              <Button
-                variant="ghost"
-                size={isScrolled ? "sm" : "default"}
-                onClick={() => scrollToSection("film")}
-                className={cn(
-                  "transition-all duration-200 hover:text-primary",
-                  isScrolled ? "h-8 px-3 text-sm" : "h-10 px-4"
-                )}
-              >
-                Game Film
-              </Button>
-              <Button
-                variant="ghost"
-                size={isScrolled ? "sm" : "default"}
-                onClick={() => scrollToSection("venue")}
-                className={cn(
-                  "transition-all duration-200 hover:text-primary",
-                  isScrolled ? "h-8 px-3 text-sm" : "h-10 px-4"
-                )}
-              >
-                Venue
-              </Button>
-              <Dialog open={isFieldMapOpen} onOpenChange={setIsFieldMapOpen}>
-                <DialogTrigger asChild>
-                  <Button
-                    variant="ghost"
-                    size={isScrolled ? "sm" : "default"}
-                    className={cn(
-                      "transition-all duration-200 hover:text-primary",
-                      isScrolled ? "h-8 px-3 text-sm" : "h-10 px-4"
-                    )}
-                  >
-                    Field Map
-                  </Button>
-                </DialogTrigger>
-                <DialogContent className="max-w-5xl max-h-[90vh] overflow-auto p-0">
-                  <div className="w-full h-[85vh]">
-                    <embed
-                      src="/CENTERSTAGE Field Map.pdf#toolbar=1"
-                      type="application/pdf"
-                      className="w-full h-full"
-                      title="Field Map"
-                    />
-                  </div>
-                </DialogContent>
-              </Dialog>
+              {navItems.map((item) => (
+                <Button
+                  key={item.id}
+                  variant="ghost"
+                  size={isScrolled ? "sm" : "default"}
+                  onClick={() => scrollToSection(item.id)}
+                  className={cn(
+                    "transition-all duration-200 hover:bg-white/10 hover:text-foreground",
+                    isScrolled ? "h-8 px-3 text-sm" : "h-10 px-4"
+                  )}
+                >
+                  {item.label}
+                </Button>
+              ))}
             </motion.div>
 
             {/* Right-side controls intentionally empty */}
@@ -169,7 +110,7 @@ export function NavBar() {
                 variant="ghost"
                 size="sm"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="p-2"
+                className="p-2 hover:bg-white/10 hover:text-foreground"
               >
                 <svg
                   className="w-6 h-6"
@@ -191,10 +132,10 @@ export function NavBar() {
       </motion.nav>
 
       {/* Mobile Menu Dropdown */}
-      <AnimatePresence>
+      <AnimatePresence key="mobile-menu">
         {isMobileMenuOpen && (
           <motion.div
-            className="md:hidden fixed top-20 left-0 right-0 z-40 bg-card/95 backdrop-blur-md border-b border-primary/20"
+            className="md:hidden fixed top-20 left-0 right-0 z-40 bg-card/95 backdrop-blur-md border-b border-white/10"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
@@ -202,83 +143,20 @@ export function NavBar() {
           >
             <div className="container mx-auto px-4 py-4">
               <div className="flex flex-col space-y-2">
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={() => {
-                    scrollToSection("overview");
-                    setIsMobileMenuOpen(false);
-                  }}
-                  className="justify-start text-left h-12"
-                >
-                  Overview
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={() => {
-                    scrollToSection("schedule");
-                    setIsMobileMenuOpen(false);
-                  }}
-                  className="justify-start text-left h-12"
-                >
-                  Schedule
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={() => {
-                    scrollToSection("teams");
-                    setIsMobileMenuOpen(false);
-                  }}
-                  className="justify-start text-left h-12"
-                >
-                  Teams
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={() => {
-                    scrollToSection("film");
-                    setIsMobileMenuOpen(false);
-                  }}
-                  className="justify-start text-left h-12"
-                >
-                  Game Film
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={() => {
-                    scrollToSection("venue");
-                    setIsMobileMenuOpen(false);
-                  }}
-                  className="justify-start text-left h-12"
-                >
-                  Venue
-                </Button>
-                <Dialog open={isFieldMapOpen} onOpenChange={setIsFieldMapOpen}>
-                  <DialogTrigger asChild>
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className="justify-start text-left h-12"
-                    >
-                      Field Map
-                    </Button>
-                  </DialogTrigger>
-                  <DialogContent className="max-w-5xl max-h-[90vh] overflow-auto p-0">
-                    <div className="w-full h-[85vh]">
-                      <embed
-                        src="/CENTERSTAGE Field Map.pdf#toolbar=1"
-                        type="application/pdf"
-                        className="w-full h-full"
-                        title="Field Map"
-                      />
-                    </div>
-                  </DialogContent>
-                </Dialog>
+                {navItems.map((item) => (
+                  <Button
+                    key={item.id}
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => {
+                      scrollToSection(item.id);
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className="justify-start text-left h-12 hover:bg-white/10 hover:text-foreground"
+                  >
+                    {item.label}
+                  </Button>
+                ))}
                 {/* No mobile logout; site is public */}
               </div>
             </div>

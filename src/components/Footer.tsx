@@ -25,7 +25,7 @@ export function Footer() {
               <div className="space-y-2 text-sm">
                 <div className="flex items-center gap-2 text-foreground-muted">
                   <Calendar className="w-4 h-4" />
-                  <span>November 9, 2025</span>
+                  <span>{EVENT_DATA.displayDate}</span>
                 </div>
                 <div className="flex items-center gap-2 text-foreground-muted">
                   <MapPin className="w-4 h-4" />
@@ -46,11 +46,6 @@ export function Footer() {
                 <li>
                   <a href="#teams" className="text-foreground-muted hover:text-primary transition-colors">
                     Teams & Divisions
-                  </a>
-                </li>
-                <li>
-                  <a href="#schedule" className="text-foreground-muted hover:text-primary transition-colors">
-                    Schedule
                   </a>
                 </li>
                 <li>

@@ -37,7 +37,7 @@ export function FilmSection() {
             variant="cta" 
             size="lg" 
             className="bg-[#39ff14] hover:bg-[#39ff14]/80 text-black px-8 py-4 rounded-full text-lg font-bold shadow-lg hover:shadow-xl transition-all duration-300"
-            onClick={() => window.open('https://starlighttv.net/events/5', '_blank')}
+            onClick={() => window.open('https://starlighttv.net/events/28', '_blank')}
           >
             Order Game Film
             <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -162,7 +162,7 @@ export function FilmSection() {
                   variant="cta" 
                   size="lg" 
                   className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-full text-lg font-bold shadow-lg hover:shadow-xl transition-all duration-300"
-                  onClick={() => window.open('https://starlighttv.net/events/5', '_blank')}
+                  onClick={() => window.open('https://starlighttv.net/events/28', '_blank')}
                 >
                   Order Game Film
                   <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
