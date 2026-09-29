@@ -16,7 +16,7 @@ export const EVENT_DATA = {
   teams: [
     { name: "2Way", division: "2028", logo: "/team_logos/2way.svg" },
     { name: "Laxachusetts Black", division: "2028", logo: "/team_logos/laxachussets.svg" },
-    { name: "Eclipse", division: "2028", logo: "/team_logos/eclipse.png" },
+    { name: "Eclipse", division: "2028", logo: "/team_logos/eclipse.svg" },
     { name: "Red Hots", division: "2028", logo: "/team_logos/redhots.svg" },
     { name: "Sweetlax Upstate", division: "2028", logo: "/team_logos/sweetlaxup.svg" },
 
