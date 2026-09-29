@@ -19,20 +19,21 @@ export const EVENT_DATA = {
     { name: "Eclipse", division: "2028", logo: "/team_logos/eclipse.svg" },
     { name: "Red Hots", division: "2028", logo: "/team_logos/redhots.svg" },
     { name: "Sweetlax Upstate", division: "2028", logo: "/team_logos/sweetlaxup.svg" },
+    { name: "Long Island Express", division: "2028", logo: "/team_logos/liexpress.svg" },
 
     { name: "2Way", division: "2029", logo: "/team_logos/2way.svg" },
     { name: "Laxachusetts Black", division: "2029", logo: "/team_logos/laxachussets.svg" },
     { name: "Red Hots", division: "2029", logo: "/team_logos/redhots.svg" },
     { name: "Sweetlax Upstate", division: "2029", logo: "/team_logos/sweetlaxup.svg" },
     { name: "Beast Canada", division: "2029", logo: "/team_logos/beast%20canada.svg" },
-    { name: "TBD", division: "2029" },
+    { name: "Long Island Express", division: "2029", logo: "/team_logos/liexpress.svg" },
 
     { name: "2Way", division: "2030", logo: "/team_logos/2way.svg" },
     { name: "Sweetlax Upstate", division: "2030", logo: "/team_logos/sweetlaxup.svg" },
     { name: "Red Hots", division: "2030", logo: "/team_logos/redhots.svg" },
     { name: "TBD", division: "2030" }
   ] as Team[],
-  description: "Three divisions. Six elite programs. One stage. Centerstage brings the 2028, 2029 and 2030 divisions together for a fast-paced, single-day showcase at Oakwood Soccer Park."
+  description: "Three divisions. Seven elite programs. One stage. Centerstage brings the 2028, 2029 and 2030 divisions together for a fast-paced, single-day showcase at Oakwood Soccer Park."
 };
 
 export const FAQ_DATA = [
