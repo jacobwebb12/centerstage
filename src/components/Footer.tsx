@@ -58,6 +58,11 @@ export function Footer() {
                     Game Film
                   </a>
                 </li>
+                <li>
+                  <a href="#field-map" className="text-foreground-muted hover:text-primary transition-colors">
+                    Field Map
+                  </a>
+                </li>
               </ul>
             </div>
 

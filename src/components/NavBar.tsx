@@ -10,6 +10,7 @@ const navItems = [
   { id: "teams", label: "Teams" },
   { id: "film", label: "Game Film" },
   { id: "venue", label: "Venue" },
+  { id: "field-map", label: "Field Map" },
 ];
 
 export function NavBar() {

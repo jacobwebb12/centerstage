@@ -3,8 +3,12 @@
 import { Section } from "@/components/Section";
 import { Reveal } from "@/components/Reveal";
 import { MapEmbed } from "@/components/MapEmbed";
+import { Dialog, DialogContent, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { EVENT_DATA } from "@/lib/constants";
 import { MapPin, Car } from "lucide-react";
+
+const FIELD_MAP_SRC = "/Centerstage%20Field%20Map.jpg";
+const FIELD_MAP_ALT = `Field map of ${EVENT_DATA.location} showing Field 1, Field 2, college coach parking and general parking`;
 
 const venueInfo = [
   {
@@ -69,6 +73,41 @@ export function VenueSection() {
           </div>
         </Reveal>
       </div>
+
+      {/* Field Map */}
+      <Reveal delay={0.6}>
+        <div id="field-map" className="mt-16 lg:mt-24 scroll-mt-28">
+          <h3 className="font-display text-3xl lg:text-4xl font-bold text-foreground text-center mb-8">
+            Field Map
+          </h3>
+          <Dialog>
+            <DialogTrigger asChild>
+              <button
+                type="button"
+                className="group block mx-auto w-full max-w-xl rounded-xl overflow-hidden border border-primary/20 hover:border-primary/40 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              >
+                <img
+                  src={FIELD_MAP_SRC}
+                  alt={FIELD_MAP_ALT}
+                  loading="lazy"
+                  className="w-full h-auto transition-transform duration-300 group-hover:scale-[1.02]"
+                />
+              </button>
+            </DialogTrigger>
+            <DialogContent className="w-[96vw] max-w-[640px] p-2 sm:p-3">
+              <DialogTitle className="sr-only">Field Map</DialogTitle>
+              <img
+                src={FIELD_MAP_SRC}
+                alt={FIELD_MAP_ALT}
+                className="mx-auto w-auto max-w-full max-h-[85vh] object-contain rounded-md"
+              />
+            </DialogContent>
+          </Dialog>
+          <p className="text-center text-sm text-foreground-muted mt-4">
+            Click the map to enlarge
+          </p>
+        </div>
+      </Reveal>
     </Section>
   );
 }
