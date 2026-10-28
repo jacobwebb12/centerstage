@@ -18,18 +18,16 @@ export const EVENT_DATA = {
     { name: "Laxachusetts Black", division: "2028", logo: "/team_logos/laxachussets.svg" },
     { name: "Eclipse", division: "2028", logo: "/team_logos/eclipse.svg" },
     { name: "Red Hots", division: "2028", logo: "/team_logos/redhots.svg" },
-    { name: "Sweetlax Upstate", division: "2028", logo: "/team_logos/sweetlaxup.svg" },
     { name: "Long Island Express", division: "2028", logo: "/team_logos/liexpress.svg" },
 
     { name: "2Way", division: "2029", logo: "/team_logos/2way.svg" },
     { name: "Laxachusetts Black", division: "2029", logo: "/team_logos/laxachussets.svg" },
     { name: "Red Hots", division: "2029", logo: "/team_logos/redhots.svg" },
-    { name: "Sweetlax Upstate", division: "2029", logo: "/team_logos/sweetlaxup.svg" },
     { name: "Beast Canada", division: "2029", logo: "/team_logos/beast%20canada.svg" },
     { name: "Long Island Express", division: "2029", logo: "/team_logos/liexpress.svg" },
+    { name: "Tri-State", division: "2029", logo: "/team_logos/tri-state-lacrosse-logo.png" },
 
     { name: "2Way", division: "2030", logo: "/team_logos/2way.svg" },
-    { name: "Sweetlax Upstate", division: "2030", logo: "/team_logos/sweetlaxup.svg" },
     { name: "Red Hots", division: "2030", logo: "/team_logos/redhots.svg" },
     { name: "TBD", division: "2030" }
   ] as Team[],
