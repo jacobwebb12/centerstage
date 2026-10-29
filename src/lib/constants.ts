@@ -12,7 +12,7 @@ export const EVENT_DATA = {
   displayDate: "Sunday, November 1, 2026",
   location: "Oakwood Soccer Park",
   address: "521 Glastonbury Turnpike, Portland, CT 06480",
-  divisions: ["2028", "2029", "2030"],
+  divisions: ["2028", "2029"],
   teams: [
     { name: "2Way", division: "2028", logo: "/team_logos/2way.svg" },
     { name: "Laxachusetts Black", division: "2028", logo: "/team_logos/laxachussets.svg" },
@@ -25,13 +25,9 @@ export const EVENT_DATA = {
     { name: "Red Hots", division: "2029", logo: "/team_logos/redhots.svg" },
     { name: "Beast Canada", division: "2029", logo: "/team_logos/beast%20canada.svg" },
     { name: "Long Island Express", division: "2029", logo: "/team_logos/liexpress.svg" },
-    { name: "Tri-State", division: "2029", logo: "/team_logos/tri-state-lacrosse-logo.png" },
-
-    { name: "2Way", division: "2030", logo: "/team_logos/2way.svg" },
-    { name: "Red Hots", division: "2030", logo: "/team_logos/redhots.svg" },
-    { name: "TBD", division: "2030" }
+    { name: "Tri-State", division: "2029", logo: "/team_logos/tri-state-lacrosse-logo.png" }
   ] as Team[],
-  description: "Three divisions. Seven elite programs. One stage. Centerstage brings the 2028, 2029 and 2030 divisions together for a fast-paced, single-day showcase at Oakwood Soccer Park."
+  description: "Two divisions. Seven elite programs. One stage. Centerstage brings the 2028 and 2029 divisions together for a fast-paced, single-day showcase at Oakwood Soccer Park."
 };
 
 export const FAQ_DATA = [

@@ -31,7 +31,7 @@ const Index = () => {
               "name": EVENT_DATA.location,
               "address": EVENT_DATA.address
             },
-            "description": "Elite programs from the 2028, 2029 & 2030 divisions compete in a one-day showcase.",
+            "description": "Elite programs from the 2028 & 2029 divisions compete in a one-day showcase.",
             "performer": [...new Set(EVENT_DATA.teams.filter((team) => team.logo).map((team) => team.name))]
           })
         }}

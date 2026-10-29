@@ -22,7 +22,7 @@ export function TeamsSection() {
       id="teams"
       kicker="Elite Competition"
       title="Divisions & Teams"
-      description="Elite programs competing across three divisions"
+      description="Elite programs competing across two divisions"
     >
       {/* Division Tabs */}
       <Reveal delay={0.2}>
